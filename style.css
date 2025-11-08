@@ -27,6 +27,7 @@ section {
   border-radius: 10px;
   padding: 15px;
   width: 100%;
+  max-width: 700px;
   margin: 20px auto;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.411);
 }
@@ -37,33 +38,6 @@ footer {
   font-style: italic;
   margin-top: auto;
   padding: 1rem;
-}
-
-/*  Small devices (phones) */
-@media (max-width: 480px) {
-  body {
-    font-size: 13pt;
-  }
-
-  section {
-    padding: 10px;
-    border-radius: 8px;
-  }
-}
-
-/*  Medium devices (tablets) */
-@media (max-width: 768px) {
-  body {
-    font-size: 14pt;
-  }
-
-  section {
-    width: 95%;
-  }
-}
-
-section {
-  max-width: 700px;
 }
 
 img {
@@ -101,4 +75,40 @@ img {
   height: 180px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+
+/* Small devices (phones) */
+@media (max-width: 480px) {
+  body {
+    font-size: 13pt;
+  }
+
+  main {
+    width: 100%;
+  }
+
+  section {
+    padding: 10px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    font-size: 14pt;
+  }
+
+  main {
+    width: 95%;
+  }
+}
+
+/* Large devices (desktops) */
+@media (min-width: 769px) {
+  main {
+    max-width: 600px;
+  }
 }
