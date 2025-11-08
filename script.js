@@ -1,28 +1,41 @@
 function loadTime() {
-  var msg = document.getElementById("msg");
-  var img = document.getElementById("image");
-  var body = document.body;
+  const msg = document.getElementById("msg");
+  const img = document.getElementById("image");
+  const body = document.body;
 
-  var date = new Date();
-  var hour = date.getHours();
-  var minutes = date.getMinutes().toString().padStart(2, "0");
+  const date = new Date();
+  const hour = date.getHours();
+  const minutes = date.getMinutes().toString().padStart(2, "0");
 
-  msg.innerHTML = `Now is ${hour}:${minutes} hours.`;
+  let greeting;
+  let imageSrc;
+  let imageAlt;
+  let backgroundColor;
+  let textColor;
 
   if (hour >= 0 && hour < 12) {
-    msg.innerHTML += " Good morning!";
-    img.src = "./images/morningpic.png";
-    body.style.background = "#f7d9aa";
-    msg.style.color = "#d8d1ccff";
+    greeting = "Good morning!";
+    imageSrc = "./images/morningpic.png";
+    imageAlt = "A picture of a sunrise";
+    backgroundColor = "#f7d9aa";
+    textColor = "#d8d1ccff";
   } else if (hour >= 12 && hour < 18) {
-    msg.innerHTML += " Good afternoon!";
-    img.src = "./images/afternoonpic.png";
-    body.style.background = "#f4a261";
-    msg.style.color = "#2a2a2a";
+    greeting = "Good afternoon!";
+    imageSrc = "./images/afternoonpic.png";
+    imageAlt = "A picture of an afternoon landscape";
+    backgroundColor = "#f4a261";
+    textColor = "#2a2a2a";
   } else {
-    msg.innerHTML += " Good evening!";
-    img.src = "./images/nightpic.png";
-    body.style.background = "#914803ff";
-    msg.style.color = "#0e0e0eff";
+    greeting = "Good evening!";
+    imageSrc = "./images/nightpic.png";
+    imageAlt = "A picture of a starry night";
+    backgroundColor = "#914803ff";
+    textColor = "#0e0e0eff";
   }
+
+  msg.innerHTML = `Now is ${hour}:${minutes} hours. ${greeting}`;
+  img.src = imageSrc;
+  img.alt = imageAlt;
+  body.style.background = backgroundColor;
+  msg.style.color = textColor;
 }
